@@ -7,8 +7,13 @@
     = csrf_meta_tags
 
   %body
+    .bannerspace
+      %h1 BIG BANNER - BIG BANNER - BIG BANNER
     .boardspace
-      Banner will go here
+      =link_to 'Home', "/"
+      %br/
+      %h2 A motherfudging board.
+      %image_tag placeholder_board.jpg
     .navspace
       %ul
         %li Let's go!

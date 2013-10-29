@@ -8,7 +8,10 @@ class UsersController < ApplicationController
   end
 
   def leaderboard
-    @users = User.all #can sort by score from here.
+    @users = User.order("score DESC").limit(12)
+
+
+    #@users = User.all #can sort by score from here.
   end
 
   def new

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131028203900) do
+ActiveRecord::Schema.define(:version => 20131029191642) do
 
   create_table "games", :force => true do |t|
     t.string "board"
@@ -25,12 +25,13 @@ ActiveRecord::Schema.define(:version => 20131028203900) do
   end
 
   create_table "users", :force => true do |t|
-    t.string "username"
-    t.string "email"
-    t.string "password_digest"
-    t.text   "avatar"
-    t.text   "bio"
-    t.string "role"
+    t.string  "username"
+    t.string  "email"
+    t.string  "password_digest"
+    t.text    "avatar"
+    t.text    "bio"
+    t.string  "role"
+    t.integer "score"
   end
 
 end

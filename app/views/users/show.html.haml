@@ -2,10 +2,17 @@
   =image_tag @user.avatar
   |
   =@user.username
+
+%p
+  -if can? :update, User
+    =link_to "Edit info", edit_user_path(@user)
+
+%p
+  -if can? :destroy, @user
+    =link_to "Delete my profile", @user, :method => :delete, confirm => 'Are you sure?'
+
 %h3
   =@user.bio
-
-
 
 %ul
   %li

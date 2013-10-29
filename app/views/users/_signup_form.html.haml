@@ -14,15 +14,17 @@
   .field
     = f.label :password
     %br/
-    = f.text_field :password
+    = f.password_field :password
   .field
     = f.label :email
     %br/
     = f.text_field :email
   .field
     = f.label :avatar
+    Enter url or upload an avatar.
     %br/
-    = f.text_field :avatar
+    = f.url_field :avatar
+    = f.file_field :avatar
   .field
     = f.label :bio
     %br/

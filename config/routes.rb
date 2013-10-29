@@ -4,13 +4,14 @@ NoughtsAndCrosses::Application.routes.draw do
   # first created -> highest priority.
 
   resources :users
-
+  resources :sessions, only: [:new, :create, :destroy]
 
   #this
   post "/users" => "users#create", as: :users
   get "/users/:id" => "users#show", as: :user
   # is the same than
   # resources :users, only: [:create]
+
 
   get "/signin" => "sessions#new", as: :signin
   get "/signup" => "users#new", as: :signup
