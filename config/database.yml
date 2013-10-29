@@ -16,9 +16,9 @@ development:
   adapter: postgresql
   encoding: unicode
   database: noughts_and_crosses_development
-  pool: 5
-  username: noughts_and_crosses
-  password:
+  #pool: 5
+  #username: noughts_and_crosses
+  #password:
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -42,14 +42,14 @@ test:
   adapter: postgresql
   encoding: unicode
   database: noughts_and_crosses_test
-  pool: 5
-  username: noughts_and_crosses
-  password:
+  #pool: 5
+  #username: noughts_and_crosses
+  #password:
 
 production:
   adapter: postgresql
   encoding: unicode
   database: noughts_and_crosses_production
-  pool: 5
-  username: noughts_and_crosses
-  password:
+  #pool: 5
+  #username: noughts_and_crosses
+  #password:

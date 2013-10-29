@@ -1,0 +1,32 @@
+!!! 5
+%html
+  %head
+    %title NoughtsAndCrosses
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+
+  %body
+    .boardspace
+      Banner will go here
+    .navspace
+      %ul
+        %li Let's go!
+        %li
+          -if current_user
+            Signed in as #{current_user.name},
+            =link_to 'Sign out', signout_path, method: :delete
+          -else
+            =link_to "Sign in", signin_path
+            or
+            =link_to "Sign up", signup_path
+      Challenge computer
+      |
+      Invite a friend
+      |
+      Display leaderboard (to challenge other user)
+
+    .action_space
+      = yield
+
+

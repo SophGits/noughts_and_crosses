@@ -1,7 +1,10 @@
 NoughtsAndCrosses::Application.routes.draw do
+  root :to => "users#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
+  get "/signin" => "sessions#new", as: :signin
+  get "/signup" => "users#new", as: :signup
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action

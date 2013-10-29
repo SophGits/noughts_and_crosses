@@ -1,0 +1,11 @@
+#- if can? :manage, Game
+# = link_to(make a link on the username to their profile)
+
+
+%h1 #{@user.name} by #{@user.user.name}
+  = image_tag(@user.avatar, class: "user-avatar")
+      .field-label Username:
+      = @user.username
+    .field
+      .field-label Score:
+      = @user.score
