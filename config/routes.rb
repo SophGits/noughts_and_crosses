@@ -3,8 +3,20 @@ NoughtsAndCrosses::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
+  resources :users
+
+
+  #this
+  post "/users" => "users#create", as: :users
+  get "/users/:id" => "users#show", as: :user
+  # is the same than
+  # resources :users, only: [:create]
+
   get "/signin" => "sessions#new", as: :signin
   get "/signup" => "users#new", as: :signup
+
+  get "/leaderboard" => "users#leaderboard", as: :leaderboard
+
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action

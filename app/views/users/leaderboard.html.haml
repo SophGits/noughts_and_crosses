@@ -1,11 +1,15 @@
-#- if can? :manage, Game
-# = link_to(make a link on the username to their profile)
+/ - if can? :manage, Game
+/ = link_to(make a link on the username to their profile)
 
+- @users.each do |user|
+  %h1
+    = link_to user.username, user
+  = image_tag(user.avatar, class: "user-avatar")
+  .field-label
+    Username:
+    = user.username
+  .field
+    .field-label
+      Score:
 
-%h1 #{@user.name} by #{@user.user.name}
-  = image_tag(@user.avatar, class: "user-avatar")
-      .field-label Username:
-      = @user.username
-    .field
-      .field-label Score:
-      = @user.score
+/ user.find(params[:id])

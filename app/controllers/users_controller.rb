@@ -1,14 +1,14 @@
 class UsersController < ApplicationController
 
   #before_filter :authenticate, except: [:show, :index]
-  load_and_authorize_resource :user #as in, everyone who visits the site is a user and can challenge the computer as a visitor/guest - even if they're not logged in.
+  # load_and_authorize_resource :user #as in, everyone who visits the site is a user and can challenge the computer as a visitor/guest - even if they're not logged in.
 
   def index
 
   end
 
   def leaderboard
-    @users = User.all
+    @users = User.all #can sort by score from here.
   end
 
   def new
@@ -17,7 +17,11 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(params[:user])
-    redirect_to(@user)
+      if @user.save
+        redirect_to user_path(@user.id), notice: 'Thanks for signing up'
+      else
+        render :new
+      end
   end
 
   def show

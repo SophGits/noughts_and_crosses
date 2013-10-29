@@ -1,0 +1,28 @@
+%h2
+  =image_tag @user.avatar
+  |
+  =@user.username
+%h3
+  =@user.bio
+
+
+
+%ul
+  %li
+    challenge user
+
+%table
+  %th
+    Gaming History:
+    %tr
+      %td Oponent
+      %td Outcome
+    %tr
+      %td Computer
+      %td Won (+1)
+    %tr
+      %td Sally77
+      %td Drew (-)
+    %tr
+      %td Rudolph
+      %td Lost (-1)

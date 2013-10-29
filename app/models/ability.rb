@@ -10,6 +10,7 @@ class Ability
       can :manage, :all
     else
       can :read, :all  #all non-admins
+    end
 
     #player
     if user.role?(:player)
@@ -23,10 +24,9 @@ class Ability
       #can :challenge_user
 
       #visitor (not logged in - can only challenge computer)
-      elsif user.role?(:visitor)
-        can :create, comp_game
-      end
-
+    else
+      can :create, User
+      #can :create, comp_game
     end
   end
 end
