@@ -34,4 +34,9 @@ NoughtsAndCrosses::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  config.action_mailer.smtp_settings={address: "smtp.mandrillapp.com", port: 25, enable_starttls_auto: true, user_name: "sophie.jiffy@gmail.com", password: "uj36d-y59Kt57HkMCn7osg"}
+
+  config.action_mailer.default_url_options={host: "localhost3000"}
+
 end

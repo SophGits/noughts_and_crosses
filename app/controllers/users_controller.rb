@@ -21,9 +21,19 @@ class UsersController < ApplicationController
   def create
     @user = User.create(params[:user])
       if @user.save
-        redirect_to user_path(@user.id), notice: 'Thanks for signing up'
+        if @user.email
+          UserMailer.registration_confirmation(@user).deliver
+        end
+
+        respond_to do |format|
+          format.html { redirect_to @user, notice: 'Thanks for signing up.' }
+          format.json { render json: @user, status: :created, location: @user }
+        end
       else
-        render :new
+        respond_to do |format|
+          format.html { render :new }
+          format.json { render json: @user.errors, status: :unprocessable_entity }
+        end
       end
   end
 

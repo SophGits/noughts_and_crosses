@@ -14,6 +14,7 @@ NoughtsAndCrosses::Application.routes.draw do
 
 
   get "/signin" => "sessions#new", as: :signin
+  delete "/signout" => "sessions#destroy", as: :signout
   get "/signup" => "users#new", as: :signup
 
   get "/leaderboard" => "users#leaderboard", as: :leaderboard

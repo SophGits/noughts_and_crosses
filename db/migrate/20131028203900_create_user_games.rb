@@ -6,7 +6,7 @@ class CreateUserGames < ActiveRecord::Migration
       t.string :user_id
       t.string :game_id
       t.string :player
-      t.timestamp
+      t.timestamps
     end
   end
 
