@@ -1,10 +1,12 @@
 %h1
-  This is the games index.
+  This is the games index with _board partial.
 
 - if @game
-  = @game.inspect
-  %table
+  %table.gameboard
     -[[0,1,2], [3,4,5], [6,7,8]].each do |row|
       %tr
         - row.each do |cell|
-          %td= link_to cell,
+          %td= cell_text @game, cell
+
+/ %li
+/   <a href="mailto:julien@deslangles.com?subject=Your turn to play...&body=Come on, julien@deslangles.com. I'm waiting for you at www.gameapp.com/games/#{@game[:id]} !"> Invite a friend.

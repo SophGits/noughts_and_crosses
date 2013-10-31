@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(:version => 20131028203900) do
     t.text    "avatar"
     t.text    "bio"
     t.string  "role"
-    t.integer "score"
+    t.integer "score",           :default => 0
   end
 
 end

@@ -31,7 +31,7 @@ class Game < ActiveRecord::Base
   end
 
   def game_complete
-    #are all sqaures full || a winning solution has ocurred.
+    #are all squares full || a winning solution has ocurred.
   end
 
   def winning_player

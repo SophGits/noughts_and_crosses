@@ -12,7 +12,7 @@ NoughtsAndCrosses::Application.routes.draw do
   # is the same as
   # resources :users, only: [:create]
 
-  #get "/games/new" => "games#new", as: :new_game
+  get "/games/:id/register_move" => "games#register_move", as: :register_move
 
   get "/signin" => "sessions#new", as: :signin
   delete "/signout" => "sessions#destroy", as: :signout

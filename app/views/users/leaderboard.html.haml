@@ -1,23 +1,16 @@
 / - if can? :manage, Game
 / = link_to(make a link on the username to their profile)
-= @users.count
+/= @users.count
 
 - @users.each do |user|
-  %h1
-    = link_to user.username, user
-  - if user.avatar.thumb
-    =image_tag (user.avatar.thumb)
-  -else
-    = image_tag(user.avatar, class: "user-avatar")
-
-  .field-label
-    Username:
-    = user.username
-  .field
-    .field-label
-      Score:
-      = user.score
-
-
-
-
+  %ul.inline
+    %li.frame
+      - if user.avatar.thumb
+        =image_tag (user.avatar.thumb), :class => "user_avatar"
+    %li
+      %h3
+        = link_to user.username, user
+        |
+        Score:
+        = user.score
+    %hr

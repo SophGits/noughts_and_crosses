@@ -28,10 +28,8 @@
       %ul
         %li
           =link_to 'Challenge computer', new_game_path(@game) #but want it to be in the "render "games/board" yield above (under .boardspace)"
-          %li
-          =link_to 'Challenge computer...go on', games_path(@game)
-        %li
-          Invite a friend
+        / %li
+        /   Invite a friend
         %li
           =link_to "Display leaderboard (to challenge other user)", leaderboard_path
 

@@ -7,7 +7,7 @@ class CreateUsers < ActiveRecord::Migration
       t.text :avatar
       t.text :bio
       t.string :role
-      t.integer :score
+      t.integer :score, default: 0
     end
   end
 
