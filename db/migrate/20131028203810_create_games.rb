@@ -3,6 +3,7 @@ class CreateGames < ActiveRecord::Migration
     create_table :games do |t|
       t.string :board
       t.string :winner
+      t.string :turn_symbol, default: "X"
     end
   end
 

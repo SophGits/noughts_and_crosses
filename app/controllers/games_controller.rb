@@ -32,12 +32,19 @@ class GamesController < ApplicationController
     current_user_game.player
     board = JSON.parse game.board
     cell = params[:cell].to_i
-    board[cell] = current_user_game.player
+
+    board[cell] = game.turn_symbol
+    if game.turn_symbol == "X"
+      game.turn_symbol = "O"
+    elsif game.turn_symbol == "O"
+      game.turn_symbol = "X"
+    end
+
     game.board = board.to_json
     game.save
 
     if is_computer_playing?(game)
-      computer_turn
+      computer_turn game
     end
 
     redirect_to game

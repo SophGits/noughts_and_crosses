@@ -1,5 +1,5 @@
 class Game < ActiveRecord::Base
-  attr_accessible :board, :winner
+  attr_accessible :board, :winner, :turn_symbol
 
   has_many :user_games
   has_many :users, through: :user_games

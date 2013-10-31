@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(:version => 20131028203900) do
   create_table "games", :force => true do |t|
     t.string "board"
     t.string "winner"
+    t.string "turn_symbol", :default => "X"
   end
 
   create_table "user_games", :force => true do |t|
