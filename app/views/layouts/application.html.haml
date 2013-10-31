@@ -12,8 +12,8 @@
     .boardspace
       =link_to 'Home', "/"
       %br/
-      %h2 A motherfudging board.
-      =image_tag "placeholder_board.jpg"
+      =render "games/board"
+
     .navspace
       %ul
         %li Let's go!
@@ -25,11 +25,15 @@
             =link_to "Sign in", signin_path
             or
             =link_to "Sign up", signup_path
-      Challenge computer
-      |
-      Invite a friend
-      |
-      =link_to "Display leaderboard (to challenge other user)", leaderboard_path
+      %ul
+        %li
+          =link_to 'Challenge computer', new_game_path(@game) #but want it to be in the "render "games/board" yield above (under .boardspace)"
+          %li
+          =link_to 'Challenge computer...go on', games_path(@game)
+        %li
+          Invite a friend
+        %li
+          =link_to "Display leaderboard (to challenge other user)", leaderboard_path
 
     .action_space
       = yield

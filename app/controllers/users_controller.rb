@@ -8,10 +8,9 @@ class UsersController < ApplicationController
   end
 
   def leaderboard
-    @users = User.order("score DESC").limit(12)
-
-
-    #@users = User.all #can sort by score from here.
+    #unless user.score==nil? #undefined method `score' for #<Class:
+      @users = User.order("score DESC").limit(12)
+    #end
   end
 
   def new
@@ -24,6 +23,8 @@ class UsersController < ApplicationController
         if @user.email
           UserMailer.registration_confirmation(@user).deliver
         end
+        @user.authenticate(params[:user][:password])
+        session[:user_id] = @user.id
 
         respond_to do |format|
           format.html { redirect_to @user, notice: 'Thanks for signing up.' }

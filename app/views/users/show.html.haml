@@ -4,12 +4,12 @@
   =@user.username
 
 %p
-  -if can? :update, User
+  -if current_user
     =link_to "Edit info", edit_user_path(@user)
 
 %p
   -if can? :destroy, @user
-    =link_to "Delete my profile", @user, :method => :delete, confirm => 'Are you sure?'
+    =link_to "Delete my profile", @user, method: :delete, data: { confirm: 'Are you sure?'}
 
 %h3
   =@user.bio

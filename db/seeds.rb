@@ -1,5 +1,5 @@
-User.delete_all
-Game.delete_all
+User.destroy_all
+Game.destroy_all
 
 
 user1 = User.create!(username: 'Jon', email: 'jon@jon.com', password: 'jon', password_confirmation: 'jon', remote_avatar_url: 'http://www.abrg.group.shef.ac.uk/people/jon/jon.jpg', bio: 'Hi, I am Dr. Jon. Nice to meet you. How is your basal ganglia today?', role: 'admin', score:'33')
