@@ -9,9 +9,14 @@ $color2: #0066cc;
     color: $color1;
 }
 
+ul {
+  list-style-type: none;
+}
+
 a {
   text-decoration: none;
   font-weight: bold;
+  &:hover {text-shadow: 2px 2px #ffffff;}
 }
 
   @mixin border-radius($radius) {
@@ -23,7 +28,7 @@ a {
 
   .bannerspace {
     width: 100%;
-    height: 110px;
+    height: 140px;
     background-color: #ccffee;
     text-align: center;
 
@@ -33,12 +38,13 @@ a {
       font-size: 55px;
     }
 
-    h4 {
+    h2 {
       display: inline;
     }
 
     background: url("noughtspencilbgblue.jpg");
     &:hover {background: url("noughtspencilbgcolour.jpg")}
+    background-position:center;
   }
 
   .boardspace {
@@ -72,8 +78,35 @@ table.gameboard {
     float: right;
     width: 40%;
     height: 50%;
-    background-color: #ccffcc;
+    background-color: #C9C9F0;
     height: 230px;
+    list-style-type: none;
+    text-align: center;
+    display: inline;
+    ul li.left{
+
+      display: inline;
+      list-style-type: none;
+      height: 90px;
+      width: 60px;
+      font-size: 18px;
+      margin: 20px;
+    }
+
+    ul li.right {
+
+      display: inline;
+      list-style-type: none;
+      height: 70px;
+      width: 60px;
+      font-size: 18px;
+      margin-right: 80px;
+      padding: auto;
+    }
+  }
+
+  .navspace ul img { border: 2px solid $color1;
+              border-radius: 15px;
   }
 
   .action_space {
@@ -82,14 +115,17 @@ table.gameboard {
     height: 50%;
     background-color: #ccddff;
     height: 420px;
-    overflow:scroll;
+    overflow: scroll;
+
+    .wrapper {
+      padding: 5%;
+    }
   }
 
   ul.inline {
     display: inline;
     list-style-type: none;
     text-align: left;
-    color: $color1;
   }
 
   li.frame {
@@ -102,6 +138,11 @@ table.gameboard {
     margin: 6px 8px 6px 4px;
   }
 
+  .challenge {
+    color: $color2;
+    font-weight: bold;
+  }
+
   li {
     h3 {
     margin-top: 10px;
@@ -112,3 +153,13 @@ table.gameboard {
     height: 100%;
   }
 
+
+.play {
+  float: left;
+  margin-left: 15%;
+}
+
+.leaderboard {
+  float: right;
+  margin-right: 15%;
+}

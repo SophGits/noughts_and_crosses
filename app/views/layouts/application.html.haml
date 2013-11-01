@@ -10,15 +10,13 @@
     %a{href: "/"}
       .bannerspace
         %h1 ALL FOR NOUGHT
-        %h4 (s and crosses)
+        %h2 (s and crosses)
     .boardspace
-      =link_to 'Home', "/"
-      %br/
       =render "games/board"
 
     .navspace
       %ul
-        %li Let's go!
+        %li.challenge Let's go!
         %li
           -if current_user
             Signed in as #{current_user.username},
@@ -28,12 +26,16 @@
             or
             =link_to "Sign up", signup_path
       %ul
-        %li
-          =link_to 'Challenge computer', new_game_path(@game) #but want it to be in the "render "games/board" yield above (under .boardspace)"
-        / %li
-        /   Invite a friend
-        %li
-          =link_to "Display leaderboard (to challenge other user)", leaderboard_path
-
+        %a.play{href: "/games/new"}
+          %li.left
+            =image_tag("gobuttonblue.jpg")
+            .word
+              Play
+        %a.leaderboard{href: "/leaderboard"}
+          %li.right
+            =image_tag("rosette2.jpg")
+            .word
+              Leaderboard
     .action_space
-      = yield
+      .wrapper
+        = yield

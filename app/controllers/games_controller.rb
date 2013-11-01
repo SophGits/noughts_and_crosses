@@ -8,6 +8,11 @@ class GamesController < ApplicationController
   end
 
   def new
+    if not current_user
+      redirect_to(signin_path)
+      return
+    end
+
     game = Game.create
     player1 = game.user_games.create({
       player: "X",
