@@ -7,6 +7,7 @@ $color2: #0066cc;
     a:hover {color:$color2;}
     a:active {color: $color2;}
     color: $color1;
+    font-family: Tahoma, Geneva, sans-serif;
 }
 
 ul {
@@ -83,6 +84,7 @@ table.gameboard {
     list-style-type: none;
     text-align: center;
     display: inline;
+    border-radius: 20px 20px 0 0;
     ul li.left{
 
       display: inline;
@@ -156,10 +158,11 @@ table.gameboard {
 
 .play {
   float: left;
-  margin-left: 15%;
+  margin-left: 10%;
 }
 
 .leaderboard {
   float: right;
-  margin-right: 15%;
+  margin-right: 10%;
+
 }
